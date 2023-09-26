@@ -29,7 +29,8 @@ author = 'Fast64 Community'
 # ones.
 extensions = [
     "sphinx_rtd_theme",
-    "myst_parser"
+    "myst_parser",
+    "sphinx_design",
 ]
 
 # Add any paths that contain templates here, relative to this directory.

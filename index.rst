@@ -17,7 +17,6 @@ The Fast64 addon can be found on the `Fast64 repository on GitHub`_.
    :caption: Contents:
 
    common/index
-   common/f3d_materials
    sm64/index
    oot64/index
    LICENSE
