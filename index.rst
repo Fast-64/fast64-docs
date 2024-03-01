@@ -13,7 +13,7 @@ The Fast64 addon can be found on the `Fast64 repository on GitHub`_.
 .. _Fast64 repository on GitHub: https://github.com/Fast-64/fast64
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
    :caption: Contents:
 
    common/index
