@@ -18,7 +18,7 @@
 # -- Project information -----------------------------------------------------
 
 project = 'Fast64'
-copyright = 'None (CC0-1.0)'
+copyright = '2024 Fast64 Community (licensed under CC0-1.0)'
 author = 'Fast64 Community'
 
 
