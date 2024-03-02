@@ -116,3 +116,4 @@ With these cases in mind, edge mismatch occurs when:
 	- `!force_bl` && `clr_on_cvg` in case 3 or 4 w/ `M != mem_clr`
 	- `!force_bl` && `!clr_on_cvg` in case 3 or 4 w/ `M != P`
 	- `!force_bl` && `!clr_on_cvg` && `!aa_en` in case 3 or 4 w/ `M != P`
+	
