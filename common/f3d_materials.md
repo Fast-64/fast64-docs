@@ -130,16 +130,16 @@ Dithering affects the final color that is output to the framebuffer. The affect 
 
 ## Chroma Key
 
-Chroma keying allows you to specify colors as pixel alpha. A combiner with equation {eq}`chroma_key_combiner` is recommended for use and should be used in the last available cycle. The combiner will use the `A` value put in variable A as the color output, and the alpha out will be the min value from each color channel of {eq}`key_alpha_calc`.
+Chroma keying allows you to specify colors as pixel alpha. A combiner with equation {eq}`chroma_key_combiner_f3d_mat` is recommended for use and should be used in the last available cycle. The combiner will use the `A` value put in variable A as the color output, and the alpha out will be the min value from each color channel of {eq}`key_alpha_calc_f3d_mat`.
 In order to use chroma key, `Key` must be selected in the chroma key dropdown and [alpha_cvg_sel]{.key_text} must be off in the chosen render mode.
 
 :::{card}
 $$
 combined\_color = (A - key\_center)*key\_scale + 0
-$$(chroma_key_combiner)
+$$(chroma_key_combiner_f3d_mat)
 $$
 key\_alpha = clamp(0, key\_width - abs(combined\_color), 255)
-$$(key_alpha_calc)
+$$(key_alpha_calc_f3d_mat)
 :::
 
 ## Texture Convert/Filter
