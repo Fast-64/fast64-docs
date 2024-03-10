@@ -1,0 +1,71 @@
+/*Style guide and css for the styles. This appends onto the RTD theme*/
+
+/*
+Use key text when first defining an important variable described in that header section.
+For example, [combined]{.key_text} in a section about the color combiner. Subsequent namings
+of the text should not be highlighted.
+*/
+.key_text{
+	color: #E64E17; /* matching red from a palette generator*/
+	font-weight: bolder;
+}
+
+/*
+Use literals when describing common variables. For example `alpha_cvg_sel` or `cvg_x_alpha` in
+a section about coverage. If you are defining the term or explaining it for the first time, use
+.key_text. If you are mentioning it simply as an option, use literals
+.literal - this is built in with backticks `<your text>`
+*/
+
+
+/*
+Use $$ delimited math for math in its own block
+$$
+<math eqs>
+$$
+
+Use single dollar sign or math directive for inline math
+{math}`<your func>`
+$<your func>
+*/
+
+/*
+use for short hand math equations you want to make not as big and put a box around
+stuff like number formats and ranges: e.x. [q1.8 {math}`[0-512)`]{.math-literal}
+*/
+.math-literal {
+	background: #ffffff;
+	border: 1px solid #e1e4e5;
+	padding: 2px 2px;
+    font-style: oblique;
+    font-weight: bolder;
+	font-size: 95%;
+}
+
+/*
+use for short hand lines of code you want to make not as big and put a box around
+stuff like number formats and ranges: e.x. return (max || (overflow ? infront : nearer));
+*/
+.code {
+    font-family: monospace;
+    border: 1px solid #e1e4e5;
+    padding: 2px;
+    background: #ffffff;
+    white-space: pre;
+    font-size: 95%;
+    color: darkslategrey;
+}
+
+/*
+Tabs (MyST specific):
+Use tabs to separate sections/options.
+The number of colors must fit the amount of nesting you have. If you have 2 directive blocks
+within the tabs, you must have at least a tab set with 7 colons and a tab item with 6.
+The minimun number of colors or backticks for a block directive is 3 (except for math which specifically allows '$$'
+
+::::{tab-set}
+:::{tab-item} Tab Name
+::: ; this ends the tab
+:::: ; this ends the tab set
+
+*/
