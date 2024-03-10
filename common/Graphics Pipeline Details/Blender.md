@@ -6,21 +6,21 @@ The blender is fed the output from the Color Combiner & Alpha Compare unit. It c
 
 The Z Compare unit calculates and tests Z values for a given pixel out with a value from the z_buffer. This test is enabled with the `z_cmp` flag enabled. If this flag is off, pixels are always output. If the `z_upd` flag is written, values calculated in this unit will be written out to the z_buffer.
 
-The values used for calculation are `z_px` which is the pixel's z value, and `dz_max` which is the max delta Z. `z_px` and `dz_max` are either the depth values of the current pixel, or user programmed ones. This selection is made with the `z_src_sel` option. If you chose `z_src_prim` then a constant value for both options is made. With those variables, the following calculations are made:
+The values used for calculation are z_px which is the pixel's z value, and dz_max which is the max delta Z. z_px and dz_max are either the depth values of the current pixel, or user programmed ones. This selection is made with the `z_src_sel` option. If you chose `z_src_prim` then a constant value for both options is made. With the selected z variables, the following calculations are made:
 
 ```C
 farther = (z_px+dz_max) >= mem_z; // pixel is farther than mem val
 
 nearer = (z_px-dz_max) <= mem_z; // pixel is nearer than mem val
 
-in front = z_px < mem_z, pixel; // pixel is in front of mem val
+in front = z_px < mem_z; // pixel is in front of mem val
 
 max = mem_z == z_far (0x3ffff); // mem val is the max z value
 
 overflow =  (memcvg + curpx_cvg) & 8; // Basically edges of primitives but not always
 ```
 
-With these variables, the tests whether or not a pixel is written depends on the `z_mode`. Each `z_mode` has its own test.
+These values then test whether or not a pixel is written depends on the `z_mode`. Each `z_mode` has its own test.
 - opaque - [return (max || (overflow ? infront : nearer));]{.code}
 - interpenetrating:
 	- [return (max || (overflow ? infront : nearer))]{.code}
@@ -31,16 +31,22 @@ With these variables, the tests whether or not a pixel is written depends on the
 ## Inputs
 
 The blender has 4 inputs, `p`, `m`, `a`, `b`. P and M are color inputs, while A, B are alpha inputs
-P&M have the following inputs:
-- CC input, on 2nd cycle, 1st cycle numerator
-- FB color
+P&M inputs:
+- 1st cycle: combined color, 2nd cycle: 1st cycle numerator
+- framebuffer color (aka mem_clr)
 - blend color
 - fog color
 
-A&B have these inputs:
-- A = CC alpha, B = 1-A
+A inputs:
+- combined alpha
 - fog alpha
-- A = shade alpha, B = 0
+- shade alpha
+- 0
+
+B inputs:
+- 1-A
+- fog alpha
+- 1
 - 0
 
 ## Outputs
@@ -58,7 +64,7 @@ The formula for determining whether or not blending occurs is:
 ```c
 blend_en = wstate->other_modes.force_blend || (!overflow && wstate->other_modes.antialias_en && farther);
 ```
-Which basically means blending occurs when force_bl flag is on or when anti aliasing is occuring. Anti aliasing occurs when `aa_en` is enabled and there is no cvg overflow.
+Which basically means blending occurs when the `force_bl` flag is on or when anti aliasing is occuring. Anti aliasing occurs when `aa_en` is enabled and there is no cvg overflow.
 
 
 ## Coverage

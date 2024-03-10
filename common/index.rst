@@ -7,6 +7,8 @@ Documentation not specific to a game (SM64/OoT64).
    :maxdepth: 1
    :caption: Contents:
 
-   f3d_materials
-   color_combiner
-   blender
+   F3D Material Overview
+   Color Combiner & Sources Overview
+   Geometry Modes Overview
+   Upper & Lower Modes Overview
+   Graphics Pipeline Details/index
