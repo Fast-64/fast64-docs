@@ -1,5 +1,5 @@
 Animations pre-2.4.0
-==============
+====================
 
 Importing/Exporting Binary SM64 Animations (Not Mario)
 ------------------------------------------------------
