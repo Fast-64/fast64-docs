@@ -9,3 +9,4 @@ Documentation specific to the SM64 side of Fast64.
 
    animations/v23
    animations/v24
+   animations/engine
