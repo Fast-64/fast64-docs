@@ -155,13 +155,10 @@ only differing in 2 things:
 
 To play an animation, ``set_mario_animation()`` or ``set_mario_anim_with_accel()`` is used.
 
-One entry could load two headers (variants) if they are using the same indice and values table.
+| One entry could load two headers (variants) if they are using the same indice and values table.
+| For example, anim_00 (Slow Ledge Climb Up) and anim_01 (Fall Over Backwards) use the same indice and values table, so the data would be structured like this:
+| ``anim_00 header, anim_01 header, values and indice tables``
+| To load anim_00, the engine has to read anim_01's header as well, since it's in between anim_00 and the data. 
+| But if you load anim_01, it will not load anim_00's header.
 
-For example, anim_00 (Slow Ledge Climb Up) and anim_01 (Fall Over Backwards) use the same indice and values table. 
-So the data would be structured like this:
-``anim_00 header, anim_01 header, values and indice tables``
-
-To load anim_00, the engine has to read anim_01's header as well, since is in between anim_00 and the data. 
-But if you tried to load anim_01, it will not load anim_00's header.
-
-For more info on DMA tables, see :doc:`DMA Tables <../dma_table>`.
+For more information, see :doc:`DMA Tables <../dma_table>`.
