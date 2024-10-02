@@ -78,8 +78,8 @@ Each pair of values represents an axis:
 
 The first 3 axis are the translation, all following axis are rotations.
 
-Example Data:
-~~~~~~~~~~~~~
+Example:
+~~~~~~~~
 In this example, the animation will loop from frame 0 to frame 4.
 There will be no translation (all values will be 0) and the angles will all rotate from 0° to 270°.
 
@@ -112,6 +112,25 @@ There will be no translation (all values will be 0) and the angles will all rota
 
 ----------------------------
 
+Tables
+------
+Animation tables are simple arrays of header pointers ``const struct Animation *const anim_table[]``, they get set using the ``LOAD_ANIMATIONS(field (Always oAnims), anim_table)`` behavior script command.
+Mario loads his animations dynamically, see `DMA Table Animations (Mario)`_
+
+Example:
+~~~~~~~~
+.. code-block:: c
+
+    static const struct Animation *const anim_table[] = {
+        &anim_00,
+        &anim_01,
+        NULL
+    };
+
+``cur_obj_init_animation(index)`` and its variations or the behavior script command ``ANIMATE(index)`` can be used to play an animation in the current object.
+
+----------------------------
+
 DMA Table Animations (Mario)
 ----------------------------
 
@@ -119,7 +138,9 @@ Mario animations use a DMA table (like the demos' input), this stores normal ani
 
 - The value and indice table pointers are offsets within each DMA entry
 - Length is set to the size in bytes of the entry (which goes unused since that's part of the DMA entrie offset-size pair struct)
-  
+
+To play an animation, ``set_mario_animation()`` or ``set_mario_anim_with_accel()`` is used.
+
 One entry could load two headers (variants) if they are using the same indice and values table.
 
 For example, anim_00 (Slow Ledge Climb Up) and anim_01 (Fall Over Backwards) use the same indice and values table. So the data would be structured like this:
