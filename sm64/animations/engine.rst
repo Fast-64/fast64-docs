@@ -128,4 +128,4 @@ For example, anim_00 (Slow Ledge Climb Up) and anim_01 (Fall Over Backwards) use
 To load anim_00, the engine has to read anim_01's header as well, since is in between anim_00 and the data. 
 But if you tried to load anim_01, it will not load anim_00's header.
 
-For more info on DMA tables, see `DMA Tables <../dma_table.html>`_.
+For more info on DMA tables, see :doc:`DMA Tables <../dma_table>`.

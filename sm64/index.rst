@@ -5,13 +5,9 @@ Documentation specific to the SM64 side of Fast64.
 
 .. toctree::
    :maxdepth: 2
-   :caption: Animations
 
-   animations/v23
-   animations/v24
-   animations/engine
-
+   animations/index
 .. toctree::
-   :hidden:
+   :maxdepth: 1
 
    dma_table
