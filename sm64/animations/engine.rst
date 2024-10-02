@@ -78,6 +78,8 @@ The first 3 axis are the translation, all following axis are rotations.
 
 Example Data:
 ~~~~~~~~~~~~~
+In this example, the animation will loop from frame 0 to frame 4.
+There will be no translation (all values will be 0) and the angles will all rotate from 0° to 270°.
 
 .. code-block:: c
 
@@ -105,7 +107,3 @@ Example Data:
         .index = indice_table,
         .length = 0
     };
-
-In this example, the animation will loop from frame 0 to frame 4.
-There will be no translation (all values will be 0) and the angles will all rotate from 0° to 270°.
-
