@@ -20,7 +20,7 @@ Enable "Show Importing Menus" in the panel "SM64 General Settings". Then set the
 .. image:: binary_importer.png
     :alt: "Importing Binary SM64 Animations"
 
-Select the "Binary" type and select a preset, see here for how to use `custom import presets <Custom Import Preset (Binary)>`_.
+Select the "Binary" type and select a preset, for custom presets see `this <#custom-import-preset-binary>`_.
 
 Custom Import Preset (Binary)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
