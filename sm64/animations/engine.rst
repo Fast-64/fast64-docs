@@ -42,7 +42,7 @@ If *Backwards* is not set, this will be the ending frame of the animation, other
 
 **Bone Count** (``s16 boneCount`` ``[10-12]``):
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-The number of bones in the animation. Usually equal to the number of bones rendering at the same time in the model but not always.
+The number of bones in the animation. Usually equal to the number of bones rendering at the same time in the model with some exceptions (Amp, Door, etc).
 
 Derived from the ``size of the indice table`` / 2 (Pair size) / 3 (Axis count) - 1 (Translation)
 
@@ -56,7 +56,9 @@ Pointer to array of 16-bit indices of arbitrary length. See `Animation Data Form
 
 **Length** (``u32 length`` ``[20-24]`` ``Unused``):
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-DMA exclusive property (0 in all other actors), length of the animation in bytes including the header, indice table, and values table.
+DMA exclusive property (0 in all other actors), see `DMA  Table Animations (Mario)`_
+
+----------------------------
 
 Animation Data Format
 ---------------------
@@ -107,3 +109,23 @@ There will be no translation (all values will be 0) and the angles will all rota
         .index = indice_table,
         .length = 0
     };
+
+----------------------------
+
+DMA Table Animations (Mario)
+----------------------------
+
+Mario animations use a DMA table (like the demos' input), this stores normal animation data for the most part, only differing in 2 things:
+
+- The value and indice table pointers are offsets within each DMA entry
+- Length is set to the size in bytes of the entry (which goes unused since that's part of the DMA entrie offset-size pair struct)
+  
+One entry could load two headers (variants) if they are using the same indice and values table.
+
+For example, anim_00 (Slow Ledge Climb Up) and anim_01 (Fall Over Backwards) use the same indice and values table. So the data would be structured like this:
+``anim_00 header, anim_01 header, values and indice tables``
+
+To load anim_00, the engine has to read anim_01's header as well, since is in between anim_00 and the data. 
+But if you tried to load anim_01, it will not load anim_00's header.
+
+For more info on DMA tables, see `DMA Tables <../dma_table.html>`_.
