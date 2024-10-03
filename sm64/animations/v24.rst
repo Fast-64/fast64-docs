@@ -2,33 +2,67 @@ Animations 2.4.0+
 =================
 
 Importing existing animations
-------------------------------
+-----------------------------
+To import animations, you will need a rig.
+`Read this to import your desired model's rig <https://github.com/Fast-64/fast64/blob/main/fast64_internal/sm64/README.md#importingexporting-sm64-geolayouts>`_ 
+or, for Mario, use the `example Mario model <https://github.com/Fast64/fast64-models/tree/mario-examples/mario>`_.
 
-From Binary
-~~~~~~~~~~~
+Then follow your respective import goal below.
+    - `Binary <#importing-existing-animations-binary>`_
 
-First, you must acquire an extended ROM (unless you only intend on importing Mario's animations which are uncompressed).
-For this, you can use `ROM Manager <https://pilzinsel64.de/sm64-rom-manager/>`_ or alternatively `sm64Extend <https://smwc.me/s/20095>`_.
 
-Enable "Show Importing Menus" in the panel "SM64 General Settings". Then set the Import Rom path to your extended ROM.
+Importing existing animations (Binary)
+--------------------------------------
 
-.. image:: ../showing_importing_menus.png
-    :alt: "Show Importing Menus" toggle highlighted in the panel "SM64 General Settings"
+Setting up the ROM
+~~~~~~~~~~~~~~~~~~
+.. include:: ../enable_importing_binary.rst
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-`Import your desired model's rig <https://github.com/Fast-64/fast64/blob/main/fast64_internal/sm64/README.md#importingexporting-sm64-geolayouts>`_ or, for Mario, use the `example Mario model <https://github.com/Lilaa3/fast64-models/tree/mario-examples/mario>`_.
-
+How to use the importer
+~~~~~~~~~~~~~~~~~~~~~~~
 .. image:: binary_importer.png
     :alt: "Importing Binary SM64 Animations"
+    :align: center
 
-Select the "Binary" type and select a preset, for custom presets see `this <#custom-import-preset-binary>`_.
+| Select the "Binary" type and select a preset using the search button next to it, for custom presets see `Custom Import Preset (Binary)`_.
+| See `General Import Settings`_ for info on the rest of the settings.
 
 Custom Import Preset (Binary)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-**Type**
-    - DMA
-    - Table
-    - Animation
+**Types**
+    - DMA: Import from a DMA table (Mario), you will need to set the ``DMA Table Address`` to the address in ROM.
+    - Table: Import from a table, you will need to enable/disable ``Is Segmented Address`` and set the address of the table, 
+      set ``Level`` to a level where the table is loaded, enable ``Check NULL Delimiter`` if the table's last element is a NULL (0x00)
+      otherwise set ``Size`` to the amount of elements if you have ``Read Entire Table`` enabled, if you aren´t reading the entire table
+      you need to set the ``Index``.
+    - Animation: Import a single animation, you will need to enable/disable ``Is Segmented Address``, set the address of the animation header 
+      and set ``Level`` to a level where the animation is loaded.
 
 **Ignore Bone Count**
-    Ignore the bone count of the target armature, necesary for when headers have a different bone count than the target armature.
+    Ignore the bone count of the target armature, 
+    necesary for when headers have a different bone count than the target armature.
+
+Import Preset Settings
+~~~~~~~~~~~~~~~~~~~~~~
+
+| To import the entire table, enable ``Read Entire Table`` (on by default).
+| To import a single animation, disable it and then either select one of the preset animations using the search button or 
+    select ``Custom`` and choose an index.
+
+General Import Settings
+~~~~~~~~~~~~~~~~~~~~~~~
+
+| The built-in animation f-curve decimate operator can be used to automatically clean up animations on import. 
+    Enable ``Run Decimate (Allowed Change)`` (on by default) to use it.
+| This is recommended for the ease of editing animations. The default error margin should keep the animation visually intact.
+| **Be warned** this can be a bit slow.
+
+| Enable ``Force Quaternions`` if you have no existing actions in the armature, 
+    this sets all the animated bones in the armature to the quaternion rotation mode, which prevents gimbal lock.
+| Alternatively, enable ``Continuity Filter`` (on by default) to at least fix any existing gimbal lock in the animations
+
+Enable ``Clear Table On Import`` (on by default) to clear the table elements of the armature on import.
+
+Finally, select your armature and click ``Import Animation(s)``.
