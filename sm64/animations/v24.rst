@@ -1,4 +1,7 @@
 Animations 2.4.0+
 =================
 
-.. include:: importing.rst
+.. toctree:: 
+    :maxdepth: 2
+
+    importing
