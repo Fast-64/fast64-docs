@@ -18,7 +18,7 @@ Set to NULL in the ROM, exists for knowing the ROM address after setting up the 
 **Entries** (``struct OffsetSizePair[numEntries]`` ``[8-(numEntries*8 + 8)]``):
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 **Offset Size Pair** (``struct OffsetSizePair``):
-  **Offset** (``u32 offset`` ``[0-4]``):
+  - **Offset** (``u32 offset`` ``[0-4]``):
     Offset from the start of the table.
-  **Size** (``u32 size`` ``[4-8]``):
+  - **Size** (``u32 size`` ``[4-8]``):
     Size in bytes of the entry.
