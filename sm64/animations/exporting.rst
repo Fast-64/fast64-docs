@@ -100,6 +100,11 @@ Is this animation object's table and actions exported in DMA table format (Like 
 | (Binary. Only available outside DMA)
 | Write the animation data to a seperate address range (*"Data Start/End Address"*) instead of after the animation table.
 
+*"File Name"*:
+~~~~~~~~~~~~~~
+| (Insertable Binary)
+| The file name for the exported animation table.
+
 -------------------------------------------------------------------------------------------------------------------------
 
 Table Element
@@ -249,8 +254,18 @@ Exporting C
 
 Exporting Binary
 ----------------
-TODO
+| Set *"Level"* to where the animations will be loaded.
+| *"Export Individual Animation"* is the equivelent of *"Export Single Action"* toggle for the C exporter.
+
+.. image:: binary_exporter.png
+  :align: center
+  :alt: text
 
 Exporting Insertable Binary
 ----------------------------
-TODO
+| Set *"Directory"* to where you want your files to be exported to.
+| *"Export Individual Animation"* is the equivelent of *"Export Single Action"* toggle for the C exporter.
+
+.. image:: insertable_exporter.png
+  :align: center
+  :alt: text
