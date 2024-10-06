@@ -23,8 +23,16 @@ This will automatically stash your action in the NLA tracks of the selected obje
 
 Animation Object Properties
 ---------------------------
-You can find the elements of the table in the *"Table"* sub-panel of the *"SM64 Animation Inspector"* panel in the animation object.
-See `Table Element`_
+
+The animation object's properties are shown in object properties in the *"SM64 Animation Inspector"* panel.
+
+.. image:: obj_inspector.png
+  :align: center
+  :alt: SM64 Animation Inspector under object properties panel
+
+| You can find the elements of the table in the *"Table"* sub-panel. See `Table Element`_
+| And you can inspect action properties in the *"Action Inspector"* sub-panel (Also found under the scene panel equivelent). See `Action Properties`_
+
 
 *"Is DMA Export"*:
 ~~~~~~~~~~~~~~~~~~
@@ -98,24 +106,35 @@ Table Element
 -------------
 A table element points to an animation and one of its variants.
 
+.. image:: table_elements.png
+  :align: center
+  :alt: Two table elements under the "Table" sub-panel, one a normal table element and another a reference.
+
 *"Action"*:
 ~~~~~~~~~~~
-The animation that owns a variant
+The animation that owns the variant.
 
 *"Variant"*:
 ~~~~~~~~~~~~
 The number of the variant, 0 is the main variant.
 
+*"Enum"*: 
+~~~~~~~~~
+| (C. Only available outside DMA with *"Generate Enums"* enabled in the animation object)
+| The enum that will represent the animation index.
+
 *"Reference"*
 ~~~~~~~~~~~~~
 | (Only available outside DMA)
 | C name or address of an animation variant (header)
-| *"Enum"*: The enum that will represent the animation index.
 
 -------------------------------------------------------------
 
 Action Properties
 -----------------
+.. image:: action_inspector.png
+  :align: center
+  :alt: SM64 Action Inspector sub-panel
 
 *"File Name"*:
 ~~~~~~~~~~~~~~
@@ -203,8 +222,25 @@ Set custom flags will evaludated for binary and DMA, you can still use known fla
 - *Shadow*:
     Apply translation to the object's shadow.
 
----------------------------------------------
+=============================================
 
 Exporting Animations
 ====================
+
+- `Exporting C`_
+- `Exporting Binary`_
+- `Exporting Insertable Binary`_
+
+------------------------------
+
+Exporting C
+-----------
+Enable *"Export Animations"*
+
+Exporting Binary
+----------------
+TODO
+
+Exporting Insertable Binary
+----------------------------
 TODO
