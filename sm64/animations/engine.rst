@@ -7,7 +7,7 @@ Animation Variant (Header) Format
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
     - **Bit 0** *No Loop* (``ANIM_FLAG_NOLOOP``):
         The animation will not repeat from the loop start after reaching the loop end frame.
-    - **Bit 1** *Backwards* (``ANIM_FLAG_FORWARD`` or ``ANIM_FLAG_BACKWARD`` in refresh 16):
+    - **Bit 1** *Loop Backwards* (``ANIM_FLAG_FORWARD`` or ``ANIM_FLAG_BACKWARD`` in refresh 16):
         The animation will loop (or stop if looping is disabled) after reaching the loop start frame. 
         Tipically used with animations which use acceleration to play an animation backwards.
     - **Bit 2** *No Acceleration* (``ANIM_FLAG_2`` or ``ANIM_FLAG_NO_ACCEL`` in HackerSM64):
