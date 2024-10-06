@@ -23,6 +23,8 @@ This will automatically stash your action in the NLA tracks of the selected obje
 
 Animation Object Properties
 ---------------------------
+You can find the elements of the table in the *"Table"* sub-panel of the *"SM64 Animation Inspector"* panel in the animation object.
+See `Table Element`_
 
 *"Is DMA Export"*:
 ~~~~~~~~~~~~~~~~~~
@@ -92,6 +94,26 @@ Is this animation object's table and actions exported in DMA table format (Like 
 
 -------------------------------------------------------------------------------------------------------------------------
 
+Table Element
+-------------
+A table element points to an animation and one of its variants.
+
+*"Action"*:
+~~~~~~~~~~~
+The animation that owns a variant
+
+*"Variant"*:
+~~~~~~~~~~~~
+The number of the variant, 0 is the main variant.
+
+*"Reference"*
+~~~~~~~~~~~~~
+| (Only available outside DMA)
+| C name or address of an animation variant (header)
+| *"Enum"*: The enum that will represent the animation index.
+
+-------------------------------------------------------------
+
 Action Properties
 -----------------
 
@@ -119,6 +141,8 @@ The amount of frames to export. Seperate from the loop points of the variants.
 Header Variants
 ---------------
 Each variant represents a way to playback the animation data.
+You can add the variant to the animation object's table by pressing *"Add To Table"*.
+Use the *"Preview Animation"* button to preview the animation, sets FPS to 30 and emulates loop points.
 
 *"Table Index"*
 ~~~~~~~~~~~~~~~
