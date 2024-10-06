@@ -227,6 +227,10 @@ Set custom flags will evaludated for binary and DMA, you can still use known fla
 Exporting Animations
 ====================
 
+**"Quick Data Read"**:
+Read fcurves directly, should work with the majority of rigs, 
+if your rig uses features such as bone contraints you will need to disable this.
+
 - `Exporting C`_
 - `Exporting Binary`_
 - `Exporting Insertable Binary`_
@@ -235,7 +239,13 @@ Exporting Animations
 
 Exporting C
 -----------
-Enable *"Export Animations"*
+| Enable *"Export Animations"* in the *"SM64 Combined Exporter"* scene panel.
+| Enable *"Export Single Action"* to export the object's selected action, this is the old workflow from the old exporter.
+| DMA exports will be relative to the custom path with the *"Custom"* header type.
+
+.. image:: c_exporter.png
+  :align: center
+  :alt: SM64 Combined Exporter with the *"Export Animations"* enabled
 
 Exporting Binary
 ----------------
