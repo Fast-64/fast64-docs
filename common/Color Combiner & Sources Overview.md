@@ -49,7 +49,7 @@ Some sources vary their color based on the geometry in the viewport. Only the `S
 
 [Shade]{.key_text} changes its color based on the geometry mode you have selected. If you are using lighting, then the shade color is based on the `Light` and `Ambient` color. The color will vary between the two depending on the direction of your lighting. If you are not using lighting, then the shade color will be based on vertex colors.
 
-Shade alpha has its own quirks. Shade alpha will be from vertex alpha unless the `fog` geo mode is enabled, then shade alpha will become the fog value. Fog will change from 0 to 1 depending on how far away the mesh triangles are from the camera. The fog intensity depends on the fog factors chosen.
+Shade alpha has its own quirks. Shade alpha will be from vertex alpha unless the `Fog` geo mode is enabled, then shade alpha will become the fog value. Fog will change from 0 to 1 depending on how far away the mesh triangles are from the camera. The fog intensity depends on the fog factors chosen.
 
 [LOD Fraction]{.key_text} is a variable that determines how far between LOD levels the current texel will be. This value shifts between 0 and 1 as the camera moves farther away from the target texel. Once reaching one, the value will wrap back to zero until the max LOD level is reached. This value is only enabled while using LOD calculations.
 
