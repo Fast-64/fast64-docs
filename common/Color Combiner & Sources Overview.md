@@ -7,7 +7,7 @@ In the F3D material inspector, the Combiner tab offers you a selection of 8 inpu
 
 Each color channel independently performs math operations following the color combiner formula. When given an RGB input, the color will use each channel as its own value, but when given a constant value, such as 0, 1 or a grayscale texture, then all channels will be given that value as input.
 
-When in two cycle mode, two sets of combiner inputs appear. Values from the output of the first cycle are available to the second cycle under the variable called [combined]{.key_text}.
+When in two cycle mode, two sets of combiner inputs appear. Values from the output of the first cycle are available to the second cycle under the variable called [Combined Color]{.key_text}.
 
 :::{admonition} Note
 The value of `combined` is not valid in 1 cycle, and using it will result in noise patterns and unmapped values being used.
