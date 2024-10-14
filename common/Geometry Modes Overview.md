@@ -41,4 +41,5 @@ In an intuitive sense, UV generation's goal is to project one tile onto the visi
 
 ## Smooth Shading
 
-With Shading is enabled, then [Smooth Shading]{.key_text} will interpolate between the vertices of each triangle to create a smooth color. This is typically known as Gouraud Shading.
+With Shading enabled, [Smooth Shading]{.key_text} will skip applying flat shading. Given smooth normals, this will result in what's typically known as Gouraud Shading. 
+Disabling it can be used for cheaper flat shading as flat shading the actual normals splits the faces.
