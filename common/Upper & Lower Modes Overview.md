@@ -72,4 +72,6 @@ This option determines where the Z values used for depth comparison are retrieve
 
 The render mode determines how rendering is performed. In general games use a system of preset options for each type of primitive. If those values are not satisfactory, you can choose from a set of options in a drop down for different types of surfaces, or manually choose individual options.
 
-If you are using 2 cycle mode, then the render mode in the first cycle generally should be [G_RM_PASS]{.key_text} (pass in dropdown) or a special mode such as fog.
+If you are using 2 cycle mode, then the render mode in the first cycle generally should be [G_RM_PASS]{.key_text} (Pass in dropdown) or a special mode such as fog.
+
+If you are using copy or fill cycle modes, then the render mode should be [G_RM_NOOP]{.key_text} (No Op in dropdown)  for both cycles.
