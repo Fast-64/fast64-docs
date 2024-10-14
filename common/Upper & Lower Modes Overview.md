@@ -44,7 +44,8 @@ This enables the correction of rasterized triangles with skew. Without correctio
 
 1 and 2 Cycle enable the full rendering pipeline and are the default options, with 2 cycle enabling additional options for combiner and render mode selection. 2 Cycle is required for loading multiple textures, LoD, or doing certain types of blending (like with fog).
 
-Copy mode will copy loaded textures to the framebuffer directly with no blending or perspective correction.
+Copy mode will copy the loaded texture to the framebuffer directly, skipping most of the rasterization pipeline except for alpha compare.
+As such, you are limited to only one texture with the same type as the framebuffer (usually RGBA16), indexed formats of the same type count (CI8 rgba16 for example)
 
 Fill mode will fill the space defined by a fill rectangle with the fill color. This is typically used to clear the screen.
 
