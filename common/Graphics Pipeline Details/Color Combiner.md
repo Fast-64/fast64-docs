@@ -5,7 +5,6 @@ In one and two cycle mode, the color combiner takes input from the texturing uni
 ## Inputs
 
 The color combiner has inputs a, b, c, d for color and alpha separately.
-See [f3d_materials](F3D Material Overview.md) for some explanation on various inputs.
 
 :::::{tab-set}
 ::::{tab-item} A Color Inputs
