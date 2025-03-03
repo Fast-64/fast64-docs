@@ -20,11 +20,3 @@ The Fast64 addon can be found on the `Fast64 repository on GitHub`_.
    sm64/index
    oot64/index
    LICENSE
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
