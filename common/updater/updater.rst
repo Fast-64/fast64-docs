@@ -38,7 +38,7 @@ Updater
 
 | After restarting, Fast64 will be in your desired version, though some versions and pull requests may have an outdated updater.
 
-| If the updater failed, there may be permission, try to download your desired version from GitHub instead.
+| If the updater failed, there may be permission issues, try to download your desired version from GitHub instead.
 | To do this, find your pull request in the Fast64 repository on GitHub.
 | Click the link after the text "Author wants to merge x commits into [Fast-64:x] from", this points to the contributor's 
   branch page in which you can download the zip file like you would normally.
