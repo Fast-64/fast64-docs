@@ -15,7 +15,7 @@ Updater
 .. image:: after_check.png
     :alt: Updater preferences after clicking the "check for updates" button, with no stable release available on the left but available on the right.
 
-- To install latest, click the "Install specific version (Latest or Older)" button, select main and click ok.
+- To install latest, click the "Install specific version (Latest or Older)" button, select "Main" and click ok.
 - To install an older version, click the "Install specific version (Latest or Older)" button, select your desired version and click ok.
 
 .. image:: selecting_a_version.png
