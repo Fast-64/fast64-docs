@@ -40,7 +40,7 @@ Is this animation object's table and actions exported in DMA table format (Like 
 
 *"Update Table"*:
 ~~~~~~~~~~~~~~~~~
-| (Only available with *"Is DMA Export"* enabled in the animation object and *"Export Single Action"*)
+| (Only available with *"Is DMA Export"* disabled in the animation object and *"Export Single Action"*)
 | In C exports, creates and updates the table along with includes.
 | In Binary, updates the table pointer at the index of the exported variants.
 
