@@ -34,24 +34,21 @@ The animation object's properties are shown in object properties in the *"SM64 A
 | And you can inspect action properties in the *"Action Inspector"* sub-panel (Also found under the scene panel equivelent). See `Action Properties`_
 
 
-*"Is DMA Export"*:
-~~~~~~~~~~~~~~~~~~
+**"Is DMA Export"**:
+
 Is this animation object's table and actions exported in DMA table format (Like Mario).
 
-*"Update Table"*:
-~~~~~~~~~~~~~~~~~
-| (Only available with *"Is DMA Export"* disabled in the animation object and *"Export Single Action"*)
-| In C exports, creates and updates the table along with includes.
-| In Binary, updates the table pointer at the index of the exported variants.
+**"Update Table"**: (Only available with *"Is DMA Export"* disabled in the animation object and *"Export Single Action"*)
 
-*"Table Name"*:
-~~~~~~~~~~~~~~~
-| (C. Only available outside DMA)
-| The name of the exported table.
+In C exports, creates and updates the table along with includes.
+In Binary, updates the table pointer at the index of the exported variants.
 
-*"Generate Enums"*:
-~~~~~~~~~~~~~~~~~~~
-| (C. Only available outside DMA)
+**"Table Name"**: (C. Only available outside DMA)
+
+The name of the exported table.
+
+**"Generate Enums"**: (C. Only available outside DMA)
+
 | Enable to generate the enums for the variants, 
   they will be named after the variant name and can be used within actor scripts and functions.
   Example: ``cur_obj_init_animation(MARIO_ANIM_ACTION);``
@@ -62,48 +59,40 @@ Is this animation object's table and actions exported in DMA table format (Like 
 | This feature is not supported in older C compilers like IDO, 
   without it enums will still be generated but can desync by user mistakes.
 
-*"Export All Seperately"*:
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-| (C. Only available outside DMA. Only applicable with *"Export Single Action"* disabled)
-| Export each animation (data and variants) in a seperate file. Reduces compression.
+**"Export All Seperately"**: (C. Only available outside DMA. Only applicable with *"Export Single Action"* disabled)
 
-*"Override Table and Data Files"*:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-| (C. Only available outside DMA. Only applicable with *"Export Single Action"* disabled. Forced if *"Export All Seperately"* is disabled)
-| Override the table and data files that are exported instead of appending new includes and table elements.
+Export each animation (data and variants) in a seperate file. Reduces compression.
 
-*"Add NULL Delimiter"*:
-~~~~~~~~~~~~~~~~~~~~~~~
-| (Only available outside DMA. Only applicable in binary with *"Export Single Action"* disabled)
-| Add a ``NULL (0x00)`` delimiter to the end of the table.
+**"Override Table and Data Files"**: (C. Only available outside DMA. Only applicable with *"Export Single Action"* disabled. Forced if *"Export All Seperately"* is disabled)
 
-*"Beginning Animation"*:
-~~~~~~~~~~~~~~~~~~~~~~~~
-| (C and binary. Only available outside DMA, only available with *"Export Behavior"* enabled in C or *"Update Behavior"* in Binary)
-| The animation used in the ANIMATE command of the behavior script.
+Override the table and data files that are exported instead of appending new includes and table elements.
 
-*"Table Start/End Address"*:
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-| (Binary)
-| Where the table will export to, outside DMA it will be used for updating table pointers if *"Update Table"* is enabled.
+**"Add NULL Delimiter"**: (Only available outside DMA. Only applicable in binary with *"Export Single Action"* disabled)
 
-*"Update Behavior"*:
-~~~~~~~~~~~~~~~~~~~~
-| (Binary. Only available outside DMA)
+Add a ``NULL (0x00)`` delimiter to the end of the table.
+
+**"Beginning Animation"**: (C and binary. Only available outside DMA, only available with *"Export Behavior"* enabled in C or *"Update Behavior"* in Binary)
+
+The animation used in the ANIMATE command of the behavior script.
+
+**"Table Start/End Address"**: (Binary)
+
+Where the table will export to, outside DMA it will be used for updating table pointers if *"Update Table"* is enabled.
+
+**"Update Behavior"**: (Binary. Only available outside DMA)
+
 | Update the behavior script ``ANIMATE`` command with *"Beginning Animation"* and the ``LOAD_ANIMATIONS`` command with the table address.
 | Will not error if the ``ANIMATE`` command is not found, check the console if you want to know if it was found.
 | The behavior script can be found under this toggle as *"Behavior"*, 
   select ``Custom`` to set a specific address, otherwise use the search button.
 
-*"Write Data Seperately"*:
-~~~~~~~~~~~~~~~~~~~~~~~~~~
-| (Binary. Only available outside DMA)
-| Write the animation data to a seperate address range (*"Data Start/End Address"*) instead of after the animation table.
+**"Write Data Seperately"**: (Binary. Only available outside DMA)
 
-*"File Name"*:
-~~~~~~~~~~~~~~
-| (Insertable Binary)
-| The file name for the exported animation table.
+Write the animation data to a seperate address range (*"Data Start/End Address"*) instead of after the animation table.
+
+**"File Name"**: (Insertable Binary)
+
+The file name for the exported animation table.
 
 -------------------------------------------------------------------------------------------------------------------------
 
@@ -115,23 +104,21 @@ A table element points to an animation and one of its variants.
   :align: center
   :alt: Two table elements under the "Table" sub-panel, one a normal table element and another a reference.
 
-*"Action"*:
-~~~~~~~~~~~
+**"Action"**:
+
 The animation that owns the variant.
 
-*"Variant"*:
-~~~~~~~~~~~~
+**"Variant"**:
+
 The number of the variant, 0 is the main variant.
 
-*"Enum"*: 
-~~~~~~~~~
-| (C. Only available outside DMA with *"Generate Enums"* enabled in the animation object)
-| The enum that will represent the animation index.
+**"Enum"**: (C. Only available outside DMA with *"Generate Enums"* enabled in the animation object)
 
-*"Reference"*
-~~~~~~~~~~~~~
-| (Only available outside DMA)
-| C name or address of an animation variant (header)
+The enum that will represent the animation index.
+
+**"Reference"**: (Only available outside DMA)
+
+C name or address of an animation variant (header)
 
 -------------------------------------------------------------
 
@@ -141,24 +128,21 @@ Action Properties
   :align: center
   :alt: SM64 Action Inspector sub-panel
 
-*"File Name"*:
-~~~~~~~~~~~~~~
-| (C and Insertable Binary. Only applicable with *"Export All Seperately"* enabled in the animation object or with *"Export Single Action"*)
-| The file name of the exported animation.
+**"File Name"**: (C and Insertable Binary. Only applicable with *"Export All Seperately"* enabled in the animation object or with *"Export Single Action"*)
 
-*"Max Frame"*:
-~~~~~~~~~~~~~~
+The file name of the exported animation.
+
+**"Max Frame"**:
+
 The amount of frames to export. Seperate from the loop points of the variants.
 
-*"Reference Tables"*:
-~~~~~~~~~~~~~~~~~~~~~
-| (Only applicable outside DMA) 
-| Pass in references to existing animation data.
+**"Reference Tables"**: (Only applicable outside DMA) 
 
-*"Start/End Address"*:
-~~~~~~~~~~~~~~~~~~~~~~
-| (Binary. Only available with *"Export Single Action"*) 
-| The start and end address where the animation will be exported to.
+Pass in references to existing animation data.
+
+**"Start/End Address"**: (Binary. Only available with *"Export Single Action"*) 
+
+The start and end address where the animation will be exported to.
 
 --------------------------------------------------------------------
 
@@ -168,31 +152,27 @@ Each variant represents a way to playback the animation data.
 You can add the variant to the animation object's table by pressing *"Add To Table"*.
 Use the *"Preview Animation"* button to preview the animation, sets FPS to 30 and emulates loop points.
 
-*"Table Index"*
-~~~~~~~~~~~~~~~
-(Only available for *"Export All Seperately"* for DMA or Binary if *"Update Table"* is on)
+**"Table Index"**: (Only available for *"Export All Seperately"* for DMA or Binary if *"Update Table"* is on)
+
 | The index in the animation table.
 | In binary (non DMA) is used to update the pointer at that index in the table.
 | In binary (DMA) is used to know what header to substitute on re-export.
 
-*"Enum"*
-~~~~~~~~
-| (C. Only available outside DMA with *"Generate Enums"* enabled in the animation object)
-| The enum that will represent the animation index.
+**"Enum"**: (C. Only available outside DMA with *"Generate Enums"* enabled in the animation object)
+The enum that will represent the animation index.
 
-*"Name"*
-~~~~~~~~
-| (C. Only available outside DMA)
-| The name of the animation variant that will be exported.
+**"Name"**: (C. Only available outside DMA)
 
-*"Translation Divisor"*:
-~~~~~~~~~~~~~~~~~~~~~~~~
+The name of the animation variant that will be exported.
+
+**"Translation Divisor"**:
+
 If set to 0, the translation multiplier will be 1.
 Otherwise, the translation multiplier is determined by dividing the object's 
 translation dividend (animYTrans) by this divisor.
 
-*"Manual Loop Points"*:
-~~~~~~~~~~~~~~~~~~~~~~~
+**"Manual Loop Points"**:
+
 When enabled, you can manually set the loop points.
 
 - *"Start"*: The starting frame of the animation, not the same as loop start.
@@ -202,8 +182,8 @@ When enabled, you can manually set the loop points.
   If *Backwards* is not set, this will be the ending frame of the animation, 
   otherwise this will be treated as the loop start frame.
 
-Flags:
-~~~~~~
+**Flags**:
+
 Set custom flags will evaludated for binary and DMA, you can still use known flags in C.
 
 - *"Loop"*: The animation will repeat from the loop start after reaching the loop end frame.
