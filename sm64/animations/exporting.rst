@@ -206,26 +206,13 @@ Flags:
 ~~~~~~
 Set custom flags will evaludated for binary and DMA, you can still use known flags in C.
 
-- *"Loop"*:
-    The animation will repeat from the loop start after reaching the loop end frame.
-- *Loop Backwards*:
-    The animation will loop (or stop if looping is disabled) after reaching the loop start frame. 
-    Tipically used with animations which use acceleration to play an animation backwards.
-- *Acceleration*:
-    Acceleration will be used when calculating which animation frame is next.
-- *Translation*:
-    The animation translation will be used during rendering (shadows included), 
-    when disabled the translation will still be exported.
-- *Only Horizontal*:
-    Only the animation horizontal translation will be applied during rendering 
-    (takes priority over translation being disabled, shadows included) 
-    the vertical translation will still be exported.
-- *Only Vertical*:
-    Only the animation vertical translation will be applied during rendering 
-    (takes priority over translation being disabled and only horizontal, shadows included) 
-    the horizontal translation will still be exported.
-- *Shadow*:
-    Apply translation to the object's shadow.
+- *"Loop"*: The animation will repeat from the loop start after reaching the loop end frame.
+- *Loop Backwards*: The animation will loop (or stop if looping is disabled) after reaching the loop start frame. Tipically used with animations which use acceleration to play an animation backwards.
+- *Acceleration*: Acceleration will be used when calculating which animation frame is next.
+- *Translation*: The animation translation will be used during rendering (shadows included), when disabled the translation will still be exported.
+- *Only Horizontal*: Only the animation horizontal translation will be applied during rendering (takes priority over translation being disabled, shadows included) the vertical translation will still be exported.
+- *Only Vertical*: Only the animation vertical translation will be applied during rendering (takes priority over translation being disabled and only horizontal, shadows included) the horizontal translation will still be exported.
+- *Shadow*: Apply translation to the object's shadow.
 
 =============================================
 
