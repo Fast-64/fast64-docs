@@ -18,3 +18,4 @@ Documentation not specific to a game (SM64/OoT64).
    :caption: Other:
 
    updater/updater
+   repo_settings/repo_settings

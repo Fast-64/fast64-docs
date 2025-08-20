@@ -27,6 +27,7 @@ Adding new custom command presets
 | You can create reusable commands that can be applied across multiple objects or bones.
 | To do this, go into the SM64 tab, in **SM64 General Settings**, press the add button under **Custom Commands**.
 | See `Configuration`_.
+| These will be saved with :doc:`Repo Settings <../../common/repo_settings/repo_settings>`!
 
 .. list-table::
    :widths: 33 33 34
