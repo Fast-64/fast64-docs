@@ -186,8 +186,8 @@ Arguments
             | ``flatten([1, 2, [3, 4]])`` -> ``[1, 2, 3, 4]``
         * ``cast_integer(value, bit_count, signed)``: 
             Clamps an integer to the valid range of a specific bit count and signness.
-            .. math::
 
+            .. math::
                 Min =
                 \begin{cases}
                     -(2^{\text{bit_count} - \text{signed}}) & \text{if signed} \\
@@ -195,7 +195,6 @@ Arguments
                 \end{cases}
 
             .. math::
-
                 Max = 2^{\text{bit_count - signed}} - signed
 
 .. _binary-types:
