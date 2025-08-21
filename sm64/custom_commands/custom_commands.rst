@@ -187,6 +187,8 @@ Arguments
     .. image:: eval_example.png
         :align: left
 
+    ``(round(y * 255) for y in x[:3])``
+
     We are taking the final RGBA color in base 1, isolating RGB, scaling each value to 0-255 and rounding.
 
     .. raw:: html
