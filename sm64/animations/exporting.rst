@@ -148,7 +148,7 @@ The start and end address where the animation will be exported to.
 
 Header Variants
 ---------------
-Each variant represents a way to playback the animation data.
+Each variant represents a way to play back the animation data.
 You can add the variant to the animation object's table by pressing *"Add To Table"*.
 Use the *"Preview Animation"* button to preview the animation, sets FPS to 30 and emulates loop points.
 
