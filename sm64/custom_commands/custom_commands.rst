@@ -1,8 +1,8 @@
 Custom Commands (2.5.0+)
 ========================
 
-| Custom commands are way to define custom macros for level scripts, geolayouts and "special" collision.
-| They can inherit basic properties of their owners (E.g. level empties can inherit all transforms, bones can inherit geometry, transforms (excluding scale) and layers).
+| Custom commands are a way to define custom macros for level scripts, geolayouts and "special" collision.
+| They can inherit basic properties of their owners (e.g. level empties can inherit all transforms, bones can inherit geometry, transforms (excluding scale) and layers).
 | They can be exported in either binary or C.
 
 Using custom commands
@@ -45,7 +45,7 @@ Some settings are only available when creating presets.
 .. _command-name:
 
 **Name**: *(Exclusive to presets)*
-    The name of the preset that will show up in the dropdowns
+    The name that will appear in the preset dropdown
 
 .. _command-type:
 
@@ -62,7 +62,7 @@ Some settings are only available when creating presets.
 .. _skip-eval:
 
 **Skip Eval**:
-   When enabled, skips expression evaluation outside of binary mode
+   When enabled, skip expression evaluation outside of binary mode
 
 Level
 ~~~~~
@@ -144,7 +144,7 @@ Geolayout Presets
 
 **Displaylist Command**: (Exclusive to :ref:`Displaylist Option being set to Optional <displaylist-option>`)
     | Command to use when geometry can be inherted. Will add an extra displaylist argument at the end.
-    | This is seen in vanilla with for E.g. ``GEO_TRANSLATE_NODE``, with the displaylist variant is ``GEO_TRANSLATE_NODE_WITH_DL`` (under the hood these use the same ID)
+    | This is seen in vanilla with for e.g. ``GEO_TRANSLATE_NODE``, with the displaylist variant is ``GEO_TRANSLATE_NODE_WITH_DL`` (under the hood these use the same ID)
 
 .. _is-animated:
 
@@ -155,7 +155,7 @@ Arguments
 ~~~~~~~~~
 
 | Arguments define the parameters your custom command will include.
-| In presets you can set a name to show up, the toggle the left side of the name will enable or disable visibility in the UI but still be appended to the command.
+| In presets, you can set a name that will be displayed. The toggle to the left of the name enables its visibility in the UI, but the argument will be appended to the comman either way.
 | To create a new argument, press the plus button.
 
 .. _`expression`:
