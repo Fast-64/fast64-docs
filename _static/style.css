@@ -69,3 +69,7 @@ The minimun number of colors or backticks for a block directive is 3 (except for
 :::: ; this ends the tab set
 
 */
+
+img.no-shrink {
+  max-width: none !important;
+}
