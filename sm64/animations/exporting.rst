@@ -184,7 +184,7 @@ When enabled, you can manually set the loop points.
 
 **Flags**:
 
-Set custom flags will evaludated for binary and DMA, you can still use known flags in C.
+Custom flags will be evaludated for binary and DMA, you can still use known flags in C.
 
 - *"Loop"*: The animation will repeat from the loop start after reaching the loop end frame.
 - *Loop Backwards*: The animation will loop (or stop if looping is disabled) after reaching the loop start frame. Tipically used with animations which use acceleration to play an animation backwards.
