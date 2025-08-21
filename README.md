@@ -8,7 +8,7 @@ This whole documentation repository is licensed under CC0-1.0, see the LICENSE.r
 
 Fork this repo, edit what you want, and open pull requests!
 
-See instructions below for setting up locally.
+See instructions bellow for setting up locally.
 
 The documentation source is written in reStructuredText and Markedly Structure Text, a simple and well-defined markup language. To learn about it, check out or copy-paste from:
 - https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html
