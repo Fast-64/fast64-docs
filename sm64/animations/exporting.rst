@@ -61,7 +61,7 @@ The name of the exported table.
 
 **"Export All Separately"**: (C. Only available outside DMA. Only applicable with *"Export Single Action"* disabled)
 
-Export each animation (data and variants) in a seperate file. Reduces compression.
+Export each animation (data and variants) in a Separete file. Reduces compression.
 
 **"Override Table and Data Files"**: (C. Only available outside DMA. Only applicable with *"Export Single Action"* disabled. Forced if *"Export All Separately"* is disabled)
 
@@ -88,7 +88,7 @@ Where the table will export to, outside DMA it will be used for updating table p
 
 **"Write Data Separately"**: (Binary. Only available outside DMA)
 
-Write the animation data to a seperate address range (*"Data Start/End Address"*) instead of after the animation table.
+Write the animation data to a Separete address range (*"Data Start/End Address"*) instead of after the animation table.
 
 **"File Name"**: (Insertable Binary)
 
@@ -134,7 +134,7 @@ The file name of the exported animation.
 
 **"Max Frame"**:
 
-The amount of frames to export. Seperate from the loop points of the variants.
+The amount of frames to export. Separete from the loop points of the variants.
 
 **"Reference Tables"**: (Only applicable outside DMA) 
 
