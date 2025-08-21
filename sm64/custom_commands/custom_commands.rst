@@ -218,7 +218,7 @@ Arguments
 .. _binary-types:
 
 **Export Types**: *(Exclusive to binary)*
-    | Bellow the eval expression, an option for the final types is available. Each argument type has its own appropriate default type.
+    | Below the eval expression, an option for the final types is available. Each argument type has its own appropriate default type.
     | These are standard 64 bit types, as in, int is 32 bit, long is 64 bit, float is 32 bit and double is 64 bit.
 
     .. image:: binary_type.png
