@@ -4,6 +4,6 @@ Animations
 .. toctree::
    :maxdepth: 1
 
-   v23
    v24
+   v25
    engine
