@@ -59,11 +59,11 @@ The name of the exported table.
 | This feature is not supported in older C compilers like IDO, 
   without it enums will still be generated but can desync by user mistakes.
 
-**"Export All Seperately"**: (C. Only available outside DMA. Only applicable with *"Export Single Action"* disabled)
+**"Export All Separately"**: (C. Only available outside DMA. Only applicable with *"Export Single Action"* disabled)
 
 Export each animation (data and variants) in a seperate file. Reduces compression.
 
-**"Override Table and Data Files"**: (C. Only available outside DMA. Only applicable with *"Export Single Action"* disabled. Forced if *"Export All Seperately"* is disabled)
+**"Override Table and Data Files"**: (C. Only available outside DMA. Only applicable with *"Export Single Action"* disabled. Forced if *"Export All Separately"* is disabled)
 
 Override the table and data files that are exported instead of appending new includes and table elements.
 
@@ -86,7 +86,7 @@ Where the table will export to, outside DMA it will be used for updating table p
 | The behavior script can be found under this toggle as *"Behavior"*, 
   select ``Custom`` to set a specific address, otherwise use the search button.
 
-**"Write Data Seperately"**: (Binary. Only available outside DMA)
+**"Write Data Separately"**: (Binary. Only available outside DMA)
 
 Write the animation data to a seperate address range (*"Data Start/End Address"*) instead of after the animation table.
 
@@ -128,7 +128,7 @@ Action Properties
   :align: center
   :alt: SM64 Action Inspector sub-panel
 
-**"File Name"**: (C and Insertable Binary. Only applicable with *"Export All Seperately"* enabled in the animation object or with *"Export Single Action"*)
+**"File Name"**: (C and Insertable Binary. Only applicable with *"Export All Separately"* enabled in the animation object or with *"Export Single Action"*)
 
 The file name of the exported animation.
 
@@ -152,7 +152,7 @@ Each variant represents a way to playback the animation data.
 You can add the variant to the animation object's table by pressing *"Add To Table"*.
 Use the *"Preview Animation"* button to preview the animation, sets FPS to 30 and emulates loop points.
 
-**"Table Index"**: (Only available for *"Export All Seperately"* for DMA or Binary if *"Update Table"* is on)
+**"Table Index"**: (Only available for *"Export All Separately"* for DMA or Binary if *"Update Table"* is on)
 
 | The index in the animation table.
 | In binary (non DMA) is used to update the pointer at that index in the table.
