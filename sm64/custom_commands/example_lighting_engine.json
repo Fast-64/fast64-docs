@@ -1,0 +1,311 @@
+{
+	"version": 1.0,
+    
+	"sm64": {
+		"custom_cmds": [
+			{
+				"name": "Point Light",
+				"cmd_type": "Geo",
+				"str_cmd": "GEO_SCENE_LIGHT",
+				"skip_eval": false,
+				"children_requirements": "ANY",
+				"group_children": false,
+				"dl_option": "NONE",
+				"is_animated": false,
+				"args": [
+					{
+						"name": "Type",
+						"show_as_preset": false,
+						"arg_type": "PARAMETER",
+						"value_type": "CHAR",
+						"signed": true,
+						"defaults": {
+							"parameter": "2"
+						}
+					},
+					{
+						"name": "RGB",
+						"show_as_preset": true,
+						"arg_type": "COLOR",
+						"eval_expression": "(round(y) * 255 for y in x[:3])",
+						"value_type": "CHAR",
+						"signed": true,
+						"round_to_sm64": false,
+						"defaults": {
+							"color": [
+								1.0,
+								1.0,
+								1.0,
+								1.0
+							]
+						}
+					},
+					{
+						"name": "Quadratic falloff",
+						"show_as_preset": true,
+						"arg_type": "NUMBER",
+						"value_type": "CHAR",
+						"signed": true,
+						"is_integer": true,
+						"step": 0,
+						"min": 0,
+						"max": 255,
+						"defaults": {
+							"value": 0
+						}
+					},
+					{
+						"name": "Linear falloff",
+						"show_as_preset": true,
+						"arg_type": "NUMBER",
+						"value_type": "CHAR",
+						"signed": true,
+						"is_integer": true,
+						"step": 0,
+						"min": 0,
+						"max": 255,
+						"defaults": {
+							"value": 0
+						}
+					},
+					{
+						"name": "Constant falloff",
+						"show_as_preset": true,
+						"arg_type": "NUMBER",
+						"value_type": "CHAR",
+						"signed": true,
+						"is_integer": true,
+						"step": 0,
+						"min": 0,
+						"max": 255,
+						"defaults": {
+							"value": 0
+						}
+					}
+				]
+			},
+			{
+				"name": "Occluded Point Light",
+				"cmd_type": "Geo",
+				"str_cmd": "GEO_SCENE_LIGHT",
+				"skip_eval": false,
+				"children_requirements": "ANY",
+				"group_children": false,
+				"dl_option": "NONE",
+				"is_animated": false,
+				"args": [
+					{
+						"name": "Type",
+						"show_as_preset": false,
+						"arg_type": "PARAMETER",
+						"value_type": "CHAR",
+						"signed": true,
+						"defaults": {
+							"parameter": "3"
+						}
+					},
+					{
+						"name": "RGB",
+						"show_as_preset": true,
+						"arg_type": "COLOR",
+						"eval_expression": "(round(y) * 255 for y in x[:3])",
+						"value_type": "CHAR",
+						"signed": true,
+						"round_to_sm64": false,
+						"defaults": {
+							"color": [
+								1.0,
+								1.0,
+								1.0,
+								1.0
+							]
+						}
+					},
+					{
+						"name": "Quadratic falloff",
+						"show_as_preset": true,
+						"arg_type": "NUMBER",
+						"value_type": "CHAR",
+						"signed": true,
+						"is_integer": true,
+						"step": 0,
+						"min": 0,
+						"max": 255,
+						"defaults": {
+							"value": 0
+						}
+					},
+					{
+						"name": "Linear falloff",
+						"show_as_preset": true,
+						"arg_type": "NUMBER",
+						"value_type": "CHAR",
+						"signed": true,
+						"is_integer": true,
+						"step": 0,
+						"min": 0,
+						"max": 255,
+						"defaults": {
+							"value": 0
+						}
+					},
+					{
+						"name": "Constant falloff",
+						"show_as_preset": true,
+						"arg_type": "NUMBER",
+						"value_type": "CHAR",
+						"signed": true,
+						"is_integer": true,
+						"step": 0,
+						"min": 0,
+						"max": 255,
+						"defaults": {
+							"value": 0
+						}
+					}
+				]
+			},
+			{
+				"name": "Directional Light",
+				"cmd_type": "Geo",
+				"str_cmd": "GEO_SCENE_LIGHT",
+				"skip_eval": false,
+				"children_requirements": "ANY",
+				"group_children": false,
+				"dl_option": "NONE",
+				"is_animated": false,
+				"args": [
+					{
+						"name": "Type",
+						"show_as_preset": false,
+						"arg_type": "PARAMETER",
+						"value_type": "CHAR",
+						"signed": true,
+						"defaults": {
+							"parameter": "1"
+						}
+					},
+					{
+						"name": "RGB",
+						"show_as_preset": true,
+						"arg_type": "COLOR",
+						"eval_expression": "(round(y) * 255 for y in x[:3])",
+						"value_type": "CHAR",
+						"signed": true,
+						"round_to_sm64": false,
+						"defaults": {
+							"color": [
+								1.0,
+								1.0,
+								1.0,
+								1.0
+							]
+						}
+					},
+					{
+						"name": "Direction",
+						"show_as_preset": true,
+						"arg_type": "ROTATION",
+						"inherit": true,
+						"eval_expression": "(cast_integer(round(y / 360.0 * 0x80), 8, False) for y in x)",
+						"value_type": "CHAR",
+						"signed": true,
+						"round_to_sm64": false,
+						"order": "XYZ",
+						"relative": true,
+						"apply_scale": false,
+						"rot_type": "EULER",
+						"defaults": {
+							"euler": [
+								0.0,
+								-0.0,
+								0.0
+							]
+						}
+					}
+				]
+			},
+			{
+				"name": "Ambient Light",
+				"cmd_type": "Geo",
+				"str_cmd": "GEO_SCENE_LIGHT",
+				"skip_eval": false,
+				"children_requirements": "ANY",
+				"group_children": false,
+				"dl_option": "NONE",
+				"is_animated": false,
+				"args": [
+					{
+						"name": "Type",
+						"show_as_preset": false,
+						"arg_type": "PARAMETER",
+						"value_type": "CHAR",
+						"signed": true,
+						"defaults": {
+							"parameter": "0"
+						}
+					},
+					{
+						"name": "RGB",
+						"show_as_preset": true,
+						"arg_type": "COLOR",
+						"eval_expression": "(round(y) * 255 for y in x[:3])",
+						"value_type": "CHAR",
+						"signed": false,
+						"round_to_sm64": false,
+						"defaults": {
+							"color": [
+								1.0,
+								1.0,
+								1.0,
+								1.0
+							]
+						}
+					},
+					{
+						"name": "",
+						"show_as_preset": false,
+						"arg_type": "NUMBER",
+						"value_type": "CHAR",
+						"signed": false,
+						"is_integer": true,
+						"step": 0,
+						"min": 0,
+						"max": 255,
+						"defaults": {
+							"value": 0
+						}
+					},
+					{
+						"name": "",
+						"show_as_preset": false,
+						"arg_type": "NUMBER",
+						"value_type": "CHAR",
+						"signed": false,
+						"is_integer": true,
+						"step": 0,
+						"min": 0,
+						"max": 255,
+						"defaults": {
+							"value": 0
+						}
+					},
+					{
+						"name": "",
+						"show_as_preset": false,
+						"arg_type": "NUMBER",
+						"value_type": "CHAR",
+						"signed": false,
+						"is_integer": true,
+						"step": 0,
+						"min": 0,
+						"max": 255,
+						"defaults": {
+							"value": 0
+						}
+					}
+				]
+			}
+		]
+	}
+}

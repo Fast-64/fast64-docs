@@ -5,6 +5,22 @@ Custom Commands (2.5.0+)
 | They can inherit basic properties of their owners (e.g. level empties can inherit all transforms, bones can inherit geometry, transforms (excluding scale) and layers).
 | They can be exported in either binary or C.
 
+Example Use Cases
+-----------------
+
+| `Lighting engine <https://github.com/HackerN64/HackerSM64/tree/base/lighting-engine>`_ 
+    implements custom commands for lights.
+| In the previous implementation of custom commands, you'd have to specify each parameter.
+| Now, you can use :download:`presets! <example_lighting_engine.json>`
+
+.. list-table::
+   :widths: 50 50
+   :header-rows: 0
+   :align: center
+
+   * - .. image:: example_lighting_engine_presets.png
+     - .. image:: example_lighting_engine_empty.png
+
 Using custom commands
 ---------------------
 
